@@ -23,7 +23,9 @@ const listContactsService = async (userId: string): Promise<TContactsResponse> =
 
     const contacts = await contactRepository.find({
         where: {
-            user: user
+            user: {
+                id: userId
+            }
         }
     })
 
